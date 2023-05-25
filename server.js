@@ -6,7 +6,7 @@ const userRoutes = require('./routes/user.route');
 const loginRoutes = require('./routes/login.route');
 const registerRoutes = require('./routes/register.route');
 const productRoutes = require('./routes/product.route');
-const productofferRoutes = require('./routes/porductoffer.route');
+const productofferRoutes = require('./routes/productoffer.route');
 const morgan = require('morgan');
 const cors = require('cors');
 
