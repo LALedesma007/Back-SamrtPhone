@@ -5,8 +5,8 @@ const { tokenConfig } = require('../config/config')
 
 const userlogin = async(req, res)=>{
   try {
-    const { userName, email, password } = req.body
-    const existUser = await modelUsers.findOne({ userName, email })
+    const { email, password } = req.body
+    const existUser = await modelUsers.findOne({ email })
     if (!existUser) return res.status(404).json({ error: 'Los datos ingresados son incorrectos' })
     const passwordMatch = bcrypt.compareSync(password, existUser.password)
     if (!passwordMatch) return res.status(404).json({ error: 'Contraseña incorrecta' })

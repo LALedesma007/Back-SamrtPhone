@@ -16,7 +16,7 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
 
-app.use('/api' , userRoutes);
+app.use('/api', userRoutes);
 app.use('/api', loginRoutes);
 app.use('/api', registerRoutes);
 app.use('/api', productRoutes);

@@ -1,5 +1,6 @@
 const modelUsers = require('../models/users.models')
 const modelProduct = require('../models/product.models')
+const modelProductOffer = require('../models/productoffer.models')
 
 
 const validationEmail = async(email) =>{
@@ -18,7 +19,16 @@ const validationModel = async(model) =>{
   return false
 };
 
+const validationModelOffers = async(model) =>{
+  const isExist = await modelProductOffer.find({model});
+  if(isExist.length !== 0) {
+  throw new Error (`El producto ${model} ya se encuetra registrado`)
+  };
+  return false
+};
+
 module.exports = {
   validationEmail,
-  validationModel
+  validationModel,
+  validationModelOffers,
 }

@@ -1,18 +1,18 @@
 const modelProductOffer = require('../models/productoffer.models')
 
 const getAddproductOffer = async() => {
-  const getData = await modelProductOffer.find()
-  return {getData}
+  const getDataOffers = await modelProductOffer.find()
+  return {getDataOffers}
 }
 
 const getOneProductOfferById = async(id) => {
-  const getDataOneById = await modelProductOffer.find({_id: id})
-  return {getDataOneById}
+  const getDataOneOffersById = await modelProductOffer.find({_id: id})
+  return {getDataOneOffersById}
 }
 
 const createOneProductOffer = async(userData) => {
-  const newProduct =await modelProductOffer.create(userData);
-  return newProduct.save();
+  const newProductOffers =await modelProductOffer.create(userData);
+  return newProductOffers.save();
 }
 
 const editOneProductOffer = async(id, datas) => {
@@ -20,8 +20,8 @@ const editOneProductOffer = async(id, datas) => {
 }
 
 const deleteOneProductOffer = async(id) => {
-  const deleteProduct =  await modelProductOffer.findByIdAndDelete({_id: id})
-  return {deleteProduct}
+  const deleteProductOffers =  await modelProductOffer.findByIdAndDelete({_id: id})
+  return {deleteProductOffers}
 }
 module.exports = {
   getAddproductOffer,
