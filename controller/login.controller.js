@@ -22,7 +22,7 @@ const userlogin = async(req, res)=>{
     })
 
 
-    res.status(200).json({ message: 'Bienvenido', paylot})
+    res.status(200).json({ message: 'Bienvenido', paylot, token})
   } catch (error) {
     res.status(500).json({ error: error.message })
   }
