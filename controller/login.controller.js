@@ -9,7 +9,6 @@ const userlogin = async(req, res)=>{
     const existUser = await modelUsers.findOne({ email })
     if (!existUser) return res.status(404).json({ error: 'Los datos ingresados son incorrectos' })
    
-
     const paylot = {
       id: existUser._id,
       userName: existUser.userName,
@@ -20,7 +19,6 @@ const userlogin = async(req, res)=>{
     const token = jwt.sign(paylot, tokenConfig.secret_token, {
       expiresIn:"7d",
     })
-
 
     res.status(200).json({ message: 'Bienvenido', token})
   } catch (error) {
