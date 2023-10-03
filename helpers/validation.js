@@ -11,6 +11,14 @@ const validationEmail = async(email) =>{
   return false
 };
 
+const validationUserName = async(userName) =>{
+  const isExist = await modelUsers.find({userName});
+  if(isExist.length !== 0) {
+  throw new Error (`El nombre de usuario ya está en uso`)
+  };
+  return false
+};
+
 const validationModel = async(model) =>{
   const isExist = await modelProduct.find({model});
   if(isExist.length !== 0) {
@@ -29,6 +37,7 @@ const validationModelOffers = async(model) =>{
 
 module.exports = {
   validationEmail,
+  validationUserName,
   validationModel,
   validationModelOffers,
 }
