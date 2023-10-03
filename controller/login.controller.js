@@ -1,6 +1,7 @@
 const modelUsers = require('../models/users.models')
 const jwt = require('jsonwebtoken')
 const { tokenConfig } = require('../config/config')
+const bcrypt = require('bcrypt')
 
 const userlogin = async(req, res)=>{
   try {
