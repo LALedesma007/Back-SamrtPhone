@@ -9,12 +9,16 @@ const productRoutes = require('./routes/product.route');
 const productofferRoutes = require('./routes/productoffer.route');
 const morgan = require('morgan');
 const cors = require('cors');
+const mercadopago = require("./config/mercadopagoConfig");
+const mercadopagoController = require("./controller/mercadopago.controller"); 
 
 
 const app = express();
 app.use(morgan('dev'));
 app.use(cors());
 app.use(express.json());
+
+app.post("/create_preference", mercadopagoController.createPreference);
 
 app.use('/api', userRoutes);
 app.use('/api', loginRoutes);

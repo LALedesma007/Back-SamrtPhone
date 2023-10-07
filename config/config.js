@@ -8,7 +8,8 @@ const config ={
   },
   
   tokenConfig: {
-    secret_token: process.env.KEY_TOKEN
+    secret_token: process.env.KEY_TOKEN,
+    mercadopago_token: process.env.MERCADOPAGO_TOKEN,
   }
 }
 
